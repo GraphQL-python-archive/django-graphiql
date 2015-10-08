@@ -7,5 +7,6 @@ class GraphiQL(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(GraphiQL, self).get_context_data(**kwargs)
-        context['default_query'] = getattr(settings, 'GRAPHIQL_DEFAULT_QUERY', None)
+        default_query = getattr(settings, 'GRAPHIQL_DEFAULT_QUERY', None)
+        context['default_query'] = default_query
         return context

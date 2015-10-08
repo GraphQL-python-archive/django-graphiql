@@ -83,7 +83,7 @@
           onEditQuery: onEditQuery,
           onEditVariables: onEditVariables,
 {% if default_query %}
-          defaultQuery: '{{ default_query }}',
+          defaultQuery: '{{ default_query|escapejs }}',
 {% endif %}
         }),
         document.body
