@@ -32,3 +32,6 @@ urlpatterns = [
     url(r'^graphiql', include('graphiql.urls')),
 ]
 ```
+
+If you want to configure the default query, just set `GRAPHIQL_DEFAULT_QUERY` in your settings
+to the desired value.

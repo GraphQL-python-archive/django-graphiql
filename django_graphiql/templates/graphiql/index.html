@@ -81,7 +81,10 @@
           query: parameters.query,
           variables: parameters.variables,
           onEditQuery: onEditQuery,
-          onEditVariables: onEditVariables
+          onEditVariables: onEditVariables,
+{% if default_query %}
+          defaultQuery: '{{ default_query }}',
+{% endif %}
         }),
         document.body
       );
