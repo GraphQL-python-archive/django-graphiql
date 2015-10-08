@@ -1,2 +1,3 @@
-include requirements.txt
-recursive-include django_graphiql *
+include README.md
+recursive-include django_graphiql/static/graphiql *
+recursive-include django_graphiql/templates/graphiql *
