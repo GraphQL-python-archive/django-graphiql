@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-graphiql',
-    version='0.3.1.7',
+    version='0.3.1.8',
     download_url='git@github.com:graphql-python/django-graphiql.git',
     packages=find_packages(),
     author='Syrus Akbary',
