@@ -29,7 +29,7 @@ And then, add into your urls.py:
 ```python
 urlpatterns = [
     # Your other urls...
-    url(r'^graphiql', include('graphiql.urls')),
+    url(r'^graphiql', include('django_graphiql.urls')),
 ]
 ```
 

@@ -35,7 +35,7 @@ And then, add into your urls.py:
 
     urlpatterns = [
         # Your other urls...
-        url(r'^graphiql', include('graphiql.urls')),
+        url(r'^graphiql', include('django_graphiql.urls')),
     ]
 
 .. _GraphiQL: https://github.com/graphql/graphiql
