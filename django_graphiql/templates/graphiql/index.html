@@ -67,6 +67,7 @@
         return fetch('{{ graphql_url|escapejs }}', {
           method: 'post',
           headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
           body: JSON.stringify(graphQLParams),
         }).then(function (response) {
           return response.json()
