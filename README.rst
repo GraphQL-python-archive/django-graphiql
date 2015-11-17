@@ -1,6 +1,9 @@
 Django GraphiQL
 ===============
 
+.. image:: https://badge.fury.io/py/django-graphiql.svg
+    :target: https://badge.fury.io/py/django-graphiql
+
 Django GraphiQL is a library for integrating `GraphiQL`_ inside your
 Django project, so you can test your `GraphQL`_ schemas easily.
 
