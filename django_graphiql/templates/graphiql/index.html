@@ -4,6 +4,7 @@
   <head>
     <link rel="stylesheet" href="{% static "graphiql/graphiql.css" %}" />
     <script src="{% static "graphiql/react.min.js" %}"></script>
+    <script src="{% static "graphiql/react-dom.min.js" %}"></script>
     <script src="{% static "graphiql/fetch.min.js" %}"></script>
     <script src="{% static "graphiql/graphiql.min.js" %}"></script>
   </head>
@@ -75,7 +76,7 @@
       }
 
       // Render <GraphiQL /> into the body.
-      React.render(
+      ReactDOM.render(
         React.createElement(GraphiQL, {
           fetcher: graphQLFetcher,
           query: parameters.query,
