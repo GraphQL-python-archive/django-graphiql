@@ -43,6 +43,12 @@
         }
       }
 
+      // parse the cookie value for a CSRF token
+      var csrftoken;
+      var cookies = ('; ' + document.cookie).split('; csrftoken=');
+      if (cookies.length == 2)
+        csrftoken = cookies.pop().split(';').shift();
+
       // When the query and variables string is edited, update the URL bar so
       // that it can be easily shared
       function onEditQuery(newQuery) {
@@ -65,9 +71,13 @@
 
       // Defines a GraphQL fetcher using the fetch API.
       function graphQLFetcher(graphQLParams) {
+        var headers = { 'Content-Type': 'application/json' };
+        if (csrftoken)
+          headers['X-CSRFToken'] = csrftoken;
+
         return fetch('{{ graphql_url|escapejs }}', {
           method: 'post',
-          headers: { 'Content-Type': 'application/json' },
+          headers: headers,
           credentials: 'include',
           body: JSON.stringify(graphQLParams),
         }).then(function (response) {
