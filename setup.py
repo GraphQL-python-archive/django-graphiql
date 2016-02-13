@@ -14,7 +14,7 @@ setup(
     license='MIT',
     entry_points={
     },
-    install_requires=['django>=1.7'],
+    install_requires=['django>=1.6'],
     tests_require=[],
     include_package_data=True,
     zip_safe=False,
