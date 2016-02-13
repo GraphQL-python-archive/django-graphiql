@@ -102,13 +102,11 @@
       ReactDOM.render(
         React.createElement(GraphiQL, {
           fetcher: graphQLFetcher,
-          query: parameters.query,
-          variables: parameters.variables,
+          query: '{{ query|escapejs }}',
+          variables: '{{ variables|escapejs }}',
+          response: '{{ response|escapejs }}',
           onEditQuery: onEditQuery,
           onEditVariables: onEditVariables,
-{% if default_query %}
-          defaultQuery: '{{ default_query|escapejs }}',
-{% endif %}
         }),
         document.body
       );

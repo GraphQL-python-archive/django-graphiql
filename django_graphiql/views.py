@@ -15,6 +15,10 @@ class GraphiQL(TemplateView):
         if graphql_viewname:
             graphql_url = reverse(graphql_viewname)
 
-        context['default_query'] = default_query
+        query = self.request.GET.get('query', default_query)
+
+        context['query'] = query
+        context['variables'] = self.request.GET.get('variables', '')
+        context['response'] = ''
         context['graphql_url'] = self.graphql_url or graphql_url
         return context
